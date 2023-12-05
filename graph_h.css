@@ -50,6 +50,7 @@ main {
     margin-top: 75px; /* Add margin-top to prevent overlap with fixed header */
     display: flex;
     flex-direction: column;
+    overflow-y: auto; /* Enable vertical scrollbar when needed */
 }
 
 /* Body background color */
