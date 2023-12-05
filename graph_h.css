@@ -55,7 +55,6 @@ main {
 /* Body background color */
 body {
     background: #EEE;
-    overflow: hidden;
 }
 
 /* Ensure box sizing includes padding and border */
@@ -83,4 +82,5 @@ body {
 #chartCO,
 #chartCO2 {
     height: 500px; /* Adjust the height of the charts */
+    overflow-y: auto; /* Enable vertical scrollbar when needed */
 }
