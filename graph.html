@@ -94,13 +94,16 @@
         var co2Values = [];
 
         for (var i = 0; i < totalDataPoints; i += step) {
-            dateTimes.push(items[i].Date_time);
-            pmValues.push(items[i].PM);
-            vocValues.push(items[i].Voc);
-            coValues.push(items[i].CO);
-            co2Values.push(items[i].CO2);
+            // 추가: VOC 값이 1000을 넘어가는 경우 해당 데이터는 제외
+            if (items[i].Voc <= 1000) {
+                dateTimes.push(items[i].Date_time);
+                pmValues.push(items[i].PM);
+                vocValues.push(items[i].Voc);
+                coValues.push(items[i].CO);
+                co2Values.push(items[i].CO2);
+            }
         }
-
+        
         // Plot PM graph
         var ctxPM = document.getElementById('chartPM').getContext('2d');
         var chartPM = new Chart(ctxPM, {
