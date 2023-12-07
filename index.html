@@ -100,7 +100,7 @@
     table.innerHTML = '';
 
     // Define the desired order of field names for AirQuality with modified names
-    const fieldOrder = ['Date_time', 'D_Week', 'Temp', 'Humi', 'Voc', 'CO', 'CO2', 'PM'];
+    const fieldOrder = ['Date_time', 'D_Week', 'Temp', 'Humi', 'Voc', 'CO', 'CO2', 'PM', 'pred_CO2', 'pred_PM'];
 
     // Parse JSON data
     const jsonData = JSON.parse(data);
@@ -140,6 +140,10 @@ function getAirQualityDisplayName(fieldName) {
             return 'TVOC';
         case 'PM':
             return 'PM';
+        case 'pred_CO2':
+            return '5M After CO2';
+        case 'pred_PM':
+            return '5M After PM';
         
         // Add more cases as needed
         default:
